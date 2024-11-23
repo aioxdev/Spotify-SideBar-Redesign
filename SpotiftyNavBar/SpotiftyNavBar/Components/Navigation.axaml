@@ -1,0 +1,45 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SpotifyNavBar.Components.Navigation"
+			 ClipToBounds="False">
+
+	<UserControl.Styles>
+		<Style Selector="Grid.pointerGrid">
+			<Setter Property="Margin" Value="0 5 0 0"/>
+			<Setter Property="Transitions">
+				<Setter.Value>
+					<Transitions>
+						<ThicknessTransition Property="Margin" Duration="0:0:0.5" Easing="QuarticEaseOut"/>
+					</Transitions>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</UserControl.Styles>
+	
+	<Grid RowDefinitions="Auto,Auto">
+		<Grid Grid.Row="0" x:Name="menuTextPart">
+			<TextBlock Text="MENU" FontWeight="Medium" FontSize="10" Foreground="rgba(255,255,255,0.4)"/>
+		</Grid>
+		<Grid Grid.Row="1" Margin="0 15 0 0" x:Name="menuItemPart">
+			<StackPanel Orientation="Vertical" Spacing="5" x:Name="navItems">
+				<ToggleButton Classes="navItem" Tag="{StaticResource home}" Content="Home" IsChecked="True" Checked="ToggleButton_Checked"/>
+				<ToggleButton Classes="navItem" Tag="{StaticResource discover}" Content="Discover" Checked="ToggleButton_Checked" />
+				<ToggleButton Classes="navItem" Tag="{StaticResource radio}" Content="Radio" Checked="ToggleButton_Checked"/>
+				<ToggleButton Classes="navItem" Tag="{StaticResource mic}" Content="Artists" Checked="ToggleButton_Checked"/>
+				<ToggleButton Classes="navItem" Tag="{StaticResource albums}" Content="Albums" Checked="ToggleButton_Checked"/>
+				<ToggleButton Classes="navItem" Tag="{StaticResource mic2}" Content="Podcasts" Checked="ToggleButton_Checked"/>
+			</StackPanel>
+			<Grid Width="4" HorizontalAlignment="Left" Margin="-15 0 0 0">
+				<Border>
+					<Grid Classes="pointerGrid" VerticalAlignment="Top" x:Name="pointer">
+						<Border Background="#6BFD4C" Width="4" Height="20" CornerRadius="0 2 2 0"/>
+						<Border Background="#6BFD4C" Width="4" Height="20" CornerRadius="0 2 2 0" Effect="blur(15)"/>
+					</Grid>
+				</Border>
+			</Grid>
+		</Grid>
+	</Grid>
+</UserControl>

@@ -1,0 +1,171 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+	
+  <Design.PreviewWith>
+    <Border Padding="20" Background="Gray">
+		<StackPanel Orientation="Horizontal" Spacing="10">
+			<Button Classes="playlistItem" Content="Dance" Width="200"/>
+		</StackPanel>
+    </Border>
+  </Design.PreviewWith>
+
+	<Style Selector="Button.playlistItem">
+		<Setter Property="HorizontalAlignment" Value="Stretch"/>
+		<Setter Property="Height" Value="30"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="Button">
+					<Grid ColumnDefinitions="Auto,*,Auto" Background="rgba(255,255,255,0.00001)"> 
+						<Path Classes="i1" Grid.Column="0" Data="{StaticResource playlist}" 
+							  Fill="Red" Stretch="Uniform" Width="13"
+							  VerticalAlignment="Center"/>
+						<TextBlock Grid.Column="1" Text="{TemplateBinding Content}"
+								   VerticalAlignment="Center"
+								   FontSize="10" FontWeight="Medium" Margin="10 0 0 0"/>
+						<Grid Classes="deleteLayer" Grid.Column="2" Background="rgba(255,255,255,0.0001)">							
+							<Path Classes="i2" Data="{StaticResource delete}" StrokeThickness="1"
+								  VerticalAlignment="Center" Height="13" Margin="0 0 0 3"/>
+						</Grid>
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Style Selector="^ /template/ Path.i1">
+			<Setter Property="Fill" Value="rgba(255,255,255,0.4)"/>
+			<Setter Property="Transitions">
+				<Transitions>
+					<BrushTransition Property="Fill" Duration="0:0:0.5" Easing="QuarticEaseOut"/>
+				</Transitions>
+			</Setter>
+		</Style>
+		<Style Selector="^ /template/ Path.i2">
+			<Setter Property="Stroke" Value="rgba(255,255,255,0.2)"/>
+			<Setter Property="Transitions">
+				<Transitions>
+					<BrushTransition Property="Stroke" Duration="0:0:0.5" Easing="QuarticEaseOut"/>
+				</Transitions>
+			</Setter>
+		</Style>
+		<Style Selector="^ /template/ TextBlock">
+			<Setter Property="Foreground" Value="rgba(255,255,255,0.4)"/>
+			<Setter Property="Transitions">
+				<Transitions>
+					<BrushTransition Property="Foreground" Duration="0:0:0.5" Easing="QuarticEaseOut"/>
+				</Transitions>
+			</Setter>
+		</Style>
+		<Style Selector="^ /template/ Grid.deleteLayer">
+			<Style Selector="^:pointerover">
+				<Style Selector="^ > Path">
+					<Setter Property="Stroke" Value="#EB4040"/>
+				</Style>
+			</Style>
+		</Style>
+		<Style Selector="^:pointerover">
+			<Style Selector="^ /template/ Path.i1">
+				<Setter Property="Fill" Value="White"/>
+			</Style>
+			<Style Selector="^ /template/ TextBlock">
+				<Setter Property="Foreground" Value="White"/>
+			</Style>
+		</Style>
+	</Style>
+
+	<Style Selector="ToggleButton.navItem">
+		<Setter Property="Height" Value="30"/>
+		<Setter Property="Template">
+			<ControlTemplate TargetType="ToggleButton">
+				<Grid ColumnDefinitions="Auto,*" Background="rgba(255,255,255,0.00001)">
+					<Grid Grid.Column="0" Width="13" Height="13">
+						<Path Data="{TemplateBinding Tag}"
+							  Height="13" Stretch="Uniform"
+							  HorizontalAlignment="Center"/>
+					</Grid>
+					<Grid Grid.Column="1" Margin="10 0 0 0">
+						<TextBlock Text="{TemplateBinding Content}" FontSize="10" VerticalAlignment="Center" Margin="0 2 0 0"/>
+					</Grid>
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+		<Style Selector="^ /template/ Path">
+			<Setter Property="Fill" Value="rgba(255,255,255,0.4)"/>
+			<Setter Property="Transitions">
+				<Transitions>
+					<BrushTransition Property="Fill" Duration="0:0:0.5" Easing="QuarticEaseOut"/>
+				</Transitions>
+			</Setter>
+		</Style>
+		<Style Selector="^ /template/ TextBlock">
+			<Setter Property="Foreground" Value="rgba(255,255,255,0.4)"/>
+			<Setter Property="Transitions">
+				<Transitions>
+					<BrushTransition Property="Foreground" Duration="0:0:0.5" Easing="QuarticEaseOut"/>
+				</Transitions>
+			</Setter>
+		</Style>
+		<Style Selector="^:pointerover">
+			<Style Selector="^ /template/ Path">
+				<Setter Property="Fill" Value="White"/>
+			</Style>
+			<Style Selector="^ /template/ TextBlock">
+				<Setter Property="Foreground" Value="White"/>
+			</Style>
+		</Style>
+		<Style Selector="^:checked">
+			<Setter Property="IsEnabled" Value="False"/>
+			<Style Selector="^ /template/ Path">
+				<Setter Property="Fill" Value="White"/>
+			</Style>
+			<Style Selector="^ /template/ TextBlock">
+				<Setter Property="Foreground" Value="White"/>
+			</Style>
+		</Style>
+	</Style>
+
+	<Style Selector="Button.direction">
+		<Setter Property="Width" Value="20"/>
+		<Setter Property="Height" Value="20"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="Button">
+					<Grid>
+						<Grid.Styles>
+							<Style Selector="Ellipse">
+								<Setter Property="Transitions">
+									<Transitions>
+										<BrushTransition Property="Fill" Duration="0:0:0.5" Easing="QuarticEaseOut"/>
+									</Transitions>
+								</Setter>
+							</Style>
+							<Style Selector="Path">
+								<Setter Property="Transitions">
+									<Transitions>
+										<BrushTransition Property="Fill" Duration="0:0:0.5" Easing="QuarticEaseOut"/>
+									</Transitions>
+								</Setter>
+							</Style>
+							<Style Selector="Grid">
+								<Style Selector="^:pointerover">
+									<Style Selector="^ > Ellipse">
+										<Setter Property="Fill" Value="rgba(255,255,255,0.15)"/>
+									</Style>
+									<Style Selector="^ > Path">
+										<Setter Property="Fill" Value="White"/>
+									</Style>
+								</Style>
+							</Style>
+						</Grid.Styles>
+						<Ellipse Fill="rgba(255,255,255,0.05)" Width="{TemplateBinding Width}"/>
+						<Path Data="{StaticResource arrow}" Stroke="Black" 
+							  Fill="rgba(255,255,255,0.4)" Stretch="Uniform" 
+							  Width="3" Height="6"
+							  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	
+
+
+</Styles>

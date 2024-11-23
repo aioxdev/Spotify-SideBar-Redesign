@@ -1,0 +1,73 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" 
+             x:Class="SpotifyNavBar.Components.MusicPanel" >
+
+	<UserControl.Styles>
+		<Style Selector="ToggleButton.sound">
+			<Setter Property="Template">
+				<ControlTemplate TargetType="ToggleButton">
+					<Grid Background="rgba(255,255,255,0.00001)">
+						<Path Data="{DynamicResource sound}" Stretch="Uniform"
+							  Width="12" Fill="White"/>
+					</Grid>
+				</ControlTemplate>
+			</Setter>
+			<Style Selector="^:checked">
+				<Style Selector="^ /template/ Path">
+					<Setter Property="Data" Value="{StaticResource soundMute}"/>
+				</Style>
+			</Style>
+		</Style>
+
+		<Style Selector="Slider:horizontal">
+			<Setter Property="Transitions">
+				<Transitions>
+					<DoubleTransition Property="Value" Duration="0:0:0.5" Easing="QuarticEaseOut"/>
+				</Transitions>
+			</Setter>
+			<Style Selector="^ Track">
+				<Style Selector="^ RepeatButton Border">
+					<Setter Property="Height" Value="4"/>
+				</Style>
+				<Style Selector="^ RepeatButton#PART_IncreaseButton Border">
+					<Setter Property="CornerRadius" Value="0 12 12 0"/>
+					<Setter Property="Background" Value="rgba(255,255,255,0.2)"/>
+				</Style>
+				<Style Selector="^ RepeatButton#PART_DecreaseButton  Border">
+					<Setter Property="CornerRadius" Value="12 0 0 12"/>
+					<Setter Property="Background" Value="#6BFD4C"/>
+				</Style>
+				<Style Selector="^ Thumb">
+					<Setter Property="Height" Value="8"/>
+					<Setter Property="Width" Value="4"/>
+					<Setter Property="Background" Value="White"/>
+					<Setter Property="BorderThickness" Value="1"/>
+					<Setter Property="BorderBrush" Value="#BABABA"/>
+				</Style>
+			</Style>
+		</Style>
+	</UserControl.Styles>
+	
+	
+	<Grid RowDefinitions="Auto,Auto" Margin="10" >
+		<Grid Grid.Row="0" ColumnDefinitions="Auto,*">
+			<Border Grid.Column="0" Width="30" Height="30" CornerRadius="5" ClipToBounds="True">
+				<Border.Background>
+					<ImageBrush Source="/Assets/musicLogo.png"/>
+				</Border.Background>
+			</Border>
+			<Grid Grid.Column="1" RowDefinitions="Auto,Auto" Margin="10 0 0 0" VerticalAlignment="Center">
+				<TextBlock Grid.Row="0" Text="Chill Vibes" FontSize="8" FontWeight="Medium" Foreground="White"/>
+				<TextBlock Grid.Row="1" Text="Chill music playlist" FontSize="8" FontWeight="Regular" Foreground="rgba(255,255,255,0.4)" Margin="0 2 0 0"/>
+			</Grid> 
+		</Grid>
+		<Grid Grid.Row="1" ColumnDefinitions="Auto,*,Auto" Margin="0 5 0 0">
+			<ToggleButton Grid.Column="0" Classes="sound" Checked="ToggleButton_Checked" Unchecked="ToggleButton_Unchecked"/>
+			<Slider x:Name="soundSlider" Value="50" VerticalAlignment="Center" Grid.Column="1" Margin="10 0 10 0" />
+		</Grid>
+	</Grid>
+	
+</UserControl>

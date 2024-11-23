@@ -1,0 +1,56 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:components="clr-namespace:SpotifyNavBar.Components;assembly=SpotiftyNavBar"
+		mc:Ignorable="d" 
+        x:Class="SpotiftyNavBar.MainWindow"
+        Title="Spotify Navigation Bar"
+	    Background="Transparent"
+	    TransparencyLevelHint="AcrylicBlur"
+	    ExtendClientAreaChromeHints="NoChrome"
+	    ExtendClientAreaTitleBarHeightHint="-1"
+		ExtendClientAreaToDecorationsHint="False"
+		SystemDecorations="None"
+		CanResize="False"
+		SizeToContent="WidthAndHeight"
+		WindowStartupLocation="CenterScreen"
+		ClipToBounds="True">
+
+	<Viewbox Height="760">
+		<Grid x:Name="mainBox">
+			<Border>
+				<Border.Background>
+					<ImageBrush Stretch="UniformToFill" Opacity="0.05" Source="/Assets/noise.jpg"/>
+				</Border.Background>
+				<Border x:Name="nav" Background="rgba(0,0,0,0.4)" CornerRadius="12" Width="200" ClipToBounds="True">
+					<Grid>
+						<StackPanel Margin="15" Spacing="25" Orientation="Vertical">
+							<Grid ColumnDefinitions="Auto,*,Auto">
+								<components:Flags Grid.Column="0"/>
+								<StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="5">
+									<Button Classes="direction"/>
+									<Button Classes="direction" RenderTransform="rotate(180deg)"/>
+								</StackPanel>
+							</Grid>
+							<Grid ColumnDefinitions="Auto,*,Auto">
+								<Image Grid.Column="0" Source="/Assets/logo.png" Width="74" Height="24" Stretch="Uniform"/>
+							</Grid>
+							<components:SearchInput/>
+					
+							<components:Navigation/>
+						
+							<components:Playlist/>
+					
+							<Rectangle HorizontalAlignment="Stretch" Height="1" Fill="rgba(255,255,255,0.2)"/>
+					
+							<components:MusicPanel/>
+						</StackPanel>
+					</Grid>
+				</Border>
+			</Border>
+		</Grid>
+	</Viewbox>
+		
+
+</Window>

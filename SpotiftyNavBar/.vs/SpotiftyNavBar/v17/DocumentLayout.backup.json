@@ -1,0 +1,57 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\aioxd\\source\\repos\\Youtube\\SpotiftyNavBar\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{72A5BBCA-3BCA-4FF3-8A1E-A22656FD2D6C}|SpotiftyNavBar\\SpotiftyNavBar.csproj|c:\\users\\aioxd\\source\\repos\\youtube\\spotiftynavbar\\spotiftynavbar\\mainwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "RelativeMoniker": "D:0:0:{72A5BBCA-3BCA-4FF3-8A1E-A22656FD2D6C}|SpotiftyNavBar\\SpotiftyNavBar.csproj|solutionrelative:spotiftynavbar\\mainwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{72A5BBCA-3BCA-4FF3-8A1E-A22656FD2D6C}|SpotiftyNavBar\\SpotiftyNavBar.csproj|c:\\users\\aioxd\\source\\repos\\youtube\\spotiftynavbar\\spotiftynavbar\\mainwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72A5BBCA-3BCA-4FF3-8A1E-A22656FD2D6C}|SpotiftyNavBar\\SpotiftyNavBar.csproj|solutionrelative:spotiftynavbar\\mainwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{269a02dc-6af8-11d3-bdc4-00c04f688e50}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.axaml",
+              "DocumentMoniker": "C:\\Users\\aioxd\\source\\repos\\Youtube\\SpotiftyNavBar\\SpotiftyNavBar\\MainWindow.axaml",
+              "RelativeDocumentMoniker": "SpotiftyNavBar\\MainWindow.axaml",
+              "ToolTip": "C:\\Users\\aioxd\\source\\repos\\Youtube\\SpotiftyNavBar\\SpotiftyNavBar\\MainWindow.axaml",
+              "RelativeToolTip": "SpotiftyNavBar\\MainWindow.axaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-23T09:08:47.449Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\aioxd\\source\\repos\\Youtube\\SpotiftyNavBar\\SpotiftyNavBar\\MainWindow.axaml.cs",
+              "RelativeDocumentMoniker": "SpotiftyNavBar\\MainWindow.axaml.cs",
+              "ToolTip": "C:\\Users\\aioxd\\source\\repos\\Youtube\\SpotiftyNavBar\\SpotiftyNavBar\\MainWindow.axaml.cs",
+              "RelativeToolTip": "SpotiftyNavBar\\MainWindow.axaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T09:08:44.241Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
